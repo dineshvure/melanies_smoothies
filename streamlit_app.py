@@ -47,18 +47,18 @@ if ingredients_list:
     #st.write(ingredients_string)
 
     
-    my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order)
+        my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order)
             values ('""" + ingredients_string + """','""" + name_on_order + """')"""
 
-    st.write(my_insert_stmt)
-    #st.stop()
-    #time_to_insert=st.button("Submit Order") -- we dont need to define here, call it in "if" directly
+        st.write(my_insert_stmt)
+        #st.stop()
+        #time_to_insert=st.button("Submit Order") -- we dont need to define here, call it in "if" directly
 
-    #if ingredients_string:
-    #if time_to_insert:
-    if st.button("Submit Order"):
-        session.sql(my_insert_stmt).collect()
+        #if ingredients_string:
+        #if time_to_insert:
+        if st.button("Submit Order"):
+            session.sql(my_insert_stmt).collect()
         
-        st.success('Your Smoothie is ordered!', icon="✅")
+            st.success('Your Smoothie is ordered!', icon="✅")
 
 
